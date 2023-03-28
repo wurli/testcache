@@ -11,7 +11,7 @@ cache_delete <- function(context, desc = NULL) {
     return(NULL)
   }
   
-  cache <- read_json(path)
+  cache <- get_json(path)
   
   new <- cache |> 
     keep(~ !identical(.[["desc"]], desc))

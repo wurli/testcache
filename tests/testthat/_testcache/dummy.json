@@ -24,12 +24,7 @@
             ]
         },
         "called_functions": {
-            "dummy": [
-                "function (x) ",
-                "{",
-                "    x + 1",
-                "}"
-            ]
+
         }
     },
     {
@@ -59,19 +54,7 @@
             ]
         },
         "called_functions": {
-            "cache_off": [
-                "function () ",
-                "{",
-                "    env_poke(the, \"cache_off\", TRUE)",
-                "    invisible()",
-                "}"
-            ],
-            "dummy": [
-                "function (x) ",
-                "{",
-                "    x + 1",
-                "}"
-            ]
+
         }
     }
 ]

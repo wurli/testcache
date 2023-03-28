@@ -6,7 +6,7 @@ cache_read <- function(context, desc = NULL) {
     return(NULL)
   }
   
-  cache <- read_json(path)
+  cache <- get_json(path)
   
   if (is.null(desc)) {
     return(cache)

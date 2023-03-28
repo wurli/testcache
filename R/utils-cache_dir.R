@@ -4,7 +4,6 @@ cache_dir <- function() {
   
   maybe_create <- function(dir) {
     if (!dir.exists(dir)) {
-      cli_alert_info("Creating {.pkg testcache} cache directory {.file {dir}}")
       dir.create(dir, recursive = TRUE)
     }
     dir

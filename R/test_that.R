@@ -13,12 +13,12 @@
 #' @export
 test_that <- function(desc, code) {
   
-  context       <- curr_context()
-  cache         <- cache_read(context, desc)[[1]]
-  code          <- enexpr(code)
-  pkg_funs      <- my_fns()
-  pkg_funs_code <- pkg_funs |> map(deparse)
-  called_funs   <- NULL
+  context           <- curr_context()
+  cache             <- cache_read(context, desc)[[1]]
+  code              <- enexpr(code)
+  pkg_funs          <- my_fns()
+  pkg_funs_code     <- pkg_funs |> map(deparse)
+  ...called_funs... <- NULL
   
   if (!is.null(cache)) {
     
@@ -29,12 +29,12 @@ test_that <- function(desc, code) {
     )
     
     if (skip) {
-
+      
       return(testthat::test_that(desc, {
         expect_cache(
           failure = cache$results$fail,
-          success = cache$results$ok, 
-          skip    = cache$results$skip, 
+          success = cache$results$ok,
+          skip    = cache$results$skip,
           warning = cache$results$warn
         )
       }))
@@ -46,7 +46,7 @@ test_that <- function(desc, code) {
   mocked_funs <- pkg_funs |> 
     imap(function(fun, fun_name) {
       function(...) {
-        called_funs <<- c(called_funs, fun_name)
+        ...called_funs... <<- union(...called_funs..., fun_name)
         fun(...)
       }
     })
@@ -65,7 +65,13 @@ test_that <- function(desc, code) {
   
   pre_test_results <- cur_results()
   
-  inject(testthat::test_that(desc, !!code))
+  env <- parent.frame()
+  env_bind_lazy(env, desc = desc, code = code)
+  
+  eval(
+    bquote(testthat::test_that(.(desc), .(code))),
+    env
+  )
   
   cache_off <- the$cache_off
   env_poke(the, "cache_off", FALSE)
@@ -84,12 +90,12 @@ test_that <- function(desc, code) {
       code = deparse(code),
       cache_off = cache_off,
       results = res,
-      called_functions = pkg_funs_code[called_funs] 
+      called_functions = pkg_funs_code[...called_funs...] 
     )
     
     cache_write(cache, context)
   }
   
-  invisible(called_funs)
+  invisible(...called_funs...)
   
 }

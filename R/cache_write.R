@@ -6,6 +6,15 @@ cache_write <- function(x, context) {
     all(c("desc", "code", "cache_off", "results", "called_functions") %in% names(x))
   )
   
+  dups <- duplicated(names(x$called_functions))
+  
+  if (any(dups)) {
+    cli_warn(
+      c("Duplicated function names found when writing cache",
+        i = "Check {.val {unique(names(x$called_functions)[dups])}}")
+    )
+  }
+  
   path <- file.path(cache_dir(), paste0(context, ".json"))
   base <- if (file.exists(path)) read_json(path) else list()
   
