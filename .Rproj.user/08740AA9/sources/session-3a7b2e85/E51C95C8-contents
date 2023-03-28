@@ -1,0 +1,19 @@
+colourise <- function(text, 
+                      as = c("success", "cache", "skip", "warning", "failure", "error")) {
+  if (has_colour()) {
+    unclass((make_ansi_style(testcache_style(as)))(text))
+  }
+  else {
+    text
+  }
+}
+
+has_colour <- function() {
+  isTRUE(getOption("testthat.use_colours", TRUE)) && cli::num_ansi_colors() > 1L
+}
+
+testcache_style <- function(type = c("success", "cache", "skip", "warning", "failure", "error")) {
+  type <- match.arg(type)
+  c(success = "green", cache = "lightblue", skip = "blue", warning = "magenta", 
+    failure = "orange", error = "orange")[[type]]
+}

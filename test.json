@@ -1,0 +1,12 @@
+[
+  {
+    "desc": "some function works",
+    "code": ["x <- some_function(1:3)", "expect_equal(x, 2)"],
+    "funs": ["some_function"]
+  },
+  {
+    "desc": "another function works",
+    "code": ["expect_snapshot(another_function(2), 2)"],
+    "funs": ["another_function", "another_function_impl"]
+  }
+]

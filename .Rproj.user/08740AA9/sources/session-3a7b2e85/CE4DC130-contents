@@ -1,0 +1,28 @@
+[
+    {
+        "desc": "multiplication works",
+        "code": [
+            "{",
+            "    expect_equal(dummy_function(1), 3)",
+            "}"
+        ],
+        "called_functions": {
+            "dummy2": [
+                "function (x) ",
+                "{",
+                "    x + 1 + 1",
+                "}"
+            ],
+            "dummy_function": [
+                "function (x) ",
+                "{",
+                "    dummy2(x)",
+                "}"
+            ],
+            "3": [
+                "NULL"
+            ]
+        }
+    }
+]
+

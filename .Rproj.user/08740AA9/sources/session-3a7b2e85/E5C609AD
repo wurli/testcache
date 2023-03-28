@@ -1,0 +1,26 @@
+{
+    "id": "E5C609AD",
+    "path": "~/Repos/testcache/R/test_that.R",
+    "project_path": "R/test_that.R",
+    "type": "r_source",
+    "hash": "1928070016",
+    "contents": "",
+    "dirty": false,
+    "created": 1679769367095.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "74,54",
+        "scrollLine": "59"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1679953351,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1679953351124,
+    "read_only": false,
+    "read_only_alternatives": []
+}

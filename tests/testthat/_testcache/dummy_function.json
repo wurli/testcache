@@ -1,0 +1,43 @@
+[
+    {
+        "desc": "multiplication works",
+        "code": [
+            "{",
+            "    expect_snapshot(str(iris))",
+            "    expect_equal(dummy_function(1), 3)",
+            "}"
+        ],
+        "cache_off": [
+            false
+        ],
+        "results": {
+            "fail": [
+                0
+            ],
+            "ok": [
+                2
+            ],
+            "skip": [
+                0
+            ],
+            "warn": [
+                0
+            ]
+        },
+        "called_functions": {
+            "dummy_function": [
+                "function (x) ",
+                "{",
+                "    dummy2(x)",
+                "}"
+            ],
+            "dummy2": [
+                "function (x) ",
+                "{",
+                "    x + 2",
+                "}"
+            ]
+        }
+    }
+]
+

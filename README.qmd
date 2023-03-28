@@ -1,0 +1,27 @@
+---
+format: gfm
+---
+
+<!-- README.md is generated from README.qmd. Please edit that file -->
+
+# Method
+
+To do:
+
+-   Improve reporting. Instead of skipping, should recreate the messages
+    of the cached tests whilst also making it clear that these have been
+    skipped
+
+`test_that_cached()` is a drop-in replacement for
+`testthat::test_that()`:
+
+-   The first time a test with caching gets run, it creates a file in
+    `tests/testthat/_cache/` to indicate which functions get called,
+    directly or indirectly, during the test
+
+-   When the test is called subsequently, if any of the functions which
+    get called have changed in terms of their definition, the cache is
+    invalidated and the test is re-run. The cache is also invalidated if
+    the code for the test itself has changed.
+
+    -   This is checked by

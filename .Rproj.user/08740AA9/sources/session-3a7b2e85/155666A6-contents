@@ -1,0 +1,78 @@
+[
+    {
+        "desc": "Another snapshot",
+        "code": [
+            "{",
+            "    expect_equal(dummy(1), 2)",
+            "}"
+        ],
+        "cache_off": [
+            false
+        ],
+        "results": {
+            "fail": [
+                0
+            ],
+            "ok": [
+                1
+            ],
+            "skip": [
+                0
+            ],
+            "warn": [
+                0
+            ]
+        },
+        "called_functions": {
+            "dummy": [
+                "function (x) ",
+                "{",
+                "    x + 1",
+                "}"
+            ]
+        }
+    },
+    {
+        "desc": "dummy() works",
+        "code": [
+            "{",
+            "    cache_off()",
+            "    expect_equal(dummy(1), 2)",
+            "    expect_equal(2, 1 + 1)",
+            "}"
+        ],
+        "cache_off": [
+            true
+        ],
+        "results": {
+            "fail": [
+                0
+            ],
+            "ok": [
+                2
+            ],
+            "skip": [
+                0
+            ],
+            "warn": [
+                0
+            ]
+        },
+        "called_functions": {
+            "cache_off": [
+                "function () ",
+                "{",
+                "    env_poke(the, \"cache_off\", TRUE)",
+                "    invisible()",
+                "}"
+            ],
+            "dummy": [
+                "function (x) ",
+                "{",
+                "    x + 1",
+                "}"
+            ]
+        }
+    }
+]
+

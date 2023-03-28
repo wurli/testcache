@@ -1,0 +1,8 @@
+build-last-errors="[]"
+build-last-errors-base-dir=""
+build-last-outputs="[]"
+compile_pdf_state="{\"tab_visible\":false,\"running\":false,\"target_file\":\"\",\"output\":\"\",\"errors\":[]}"
+files.monitored-path=""
+find-in-files-state="{\"handle\":\"cea6a6267a9643aa94e52d80d10eced5\",\"input\":\"test_cache_write\",\"path\":\"~/Repos/testcache\",\"regex\":false,\"ignoreCase\":true,\"results\":{\"file\":[\"~/Repos/testcache/R/test_that.R\",\"~/Repos/testcache/R/test_cache_write.R\"],\"line\":[58,1],\"lineValue\":[\"cache_write(cache, context)\",\"cache_write <- function(x, context) {\"],\"matchOn\":[[0],[0]],\"matchOff\":[[16],[16]],\"replaceMatchOn\":[[0],[0]],\"replaceMatchOff\":[[11],[11]]},\"running\":false,\"replace\":true,\"preview\":false,\"gitFlag\":false,\"replacePattern\":\"cache_write\"}"
+imageDirtyState="1"
+saveActionState="0"

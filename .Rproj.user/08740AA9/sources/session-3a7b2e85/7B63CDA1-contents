@@ -1,0 +1,24 @@
+cache_dir <- function() {
+  
+  wd <- getwd()
+  
+  if (identical(basename(wd), "testthat")) {
+    path <- file.path(wd, "_testcache")
+    if (!dir.exists(path)) dir.create(path, recursive = TRUE)
+    return(path)
+  } 
+  
+  rproj_file <- list.files(wd, "\\.Rproj$")
+  wd_is_proj <- length(rproj_file) > 0
+  
+  if (wd_is_proj) {
+    path <- file.path(wd, "tests", "testthat", "_testcache")
+    if (!dir.exists(path)) dir.create(path, recursive = TRUE)
+    return(path)
+  }
+  
+  cli_abort(c(
+    "{.code tests} directory not found"
+  ))
+  
+}

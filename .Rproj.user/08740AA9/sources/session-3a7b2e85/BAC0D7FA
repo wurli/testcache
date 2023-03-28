@@ -1,0 +1,26 @@
+{
+    "id": "BAC0D7FA",
+    "path": "~/Repos/testcache/tests/testthat/test-dummy_function.R",
+    "project_path": "tests/testthat/test-dummy_function.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1679948097462.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "6,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1679951023,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1679951023528,
+    "read_only": false,
+    "read_only_alternatives": []
+}
